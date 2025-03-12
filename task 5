@@ -1,0 +1,136 @@
+#include <stdio.h>
+int cube(int num)
+{
+    return (num * num * num);
+}
+int main()
+{
+    int num;
+   int  c;
+    
+    printf("Enter number: ");
+    scanf("%d", &num);
+    
+    c = cube(num);
+
+    printf("Cube = %d", c); 
+    
+    return 0;
+}
+
+2
+
+#include <stdio.h>
+#include <math.h> 
+
+double diameter(double radius){
+    return 2*radius;
+
+}
+double area (double radius){
+    return M_PI*radius*radius;
+   
+}
+double circleference(double radius){
+    return 2*M_PI*radius;
+}
+int main(){
+    float dia;
+    float ar;
+    float circlef;
+    float radius;
+ printf("enter radius");
+ scanf("%f" , &radius);
+
+dia =diameter(radius);
+ar= area(radius);
+circlef=circleference(radius);
+
+ printf("diameter=%f\n area=%f\n circleference=%f\n",dia,area,circlef);
+ return 0;
+ 
+}
+
+3
+
+#include <stdio.h>
+
+
+int max(int num1, int num2)
+{
+    return (num1 > num2 ) ? num1 : num2;
+}
+
+int min(int num1, int num2) 
+{
+    return (num1 > num2 ) ? num2 : num1;
+}
+
+
+int main() 
+{
+    int num1, num2, maximum, minimum;
+    
+   
+    printf("Enter two numbers: ");
+    scanf("%d%d", &num1, &num2);
+    
+    maximum = max(num1, num2);  
+    minimum = min(num1, num2);  
+    
+    printf("\nMaximum = %d\n", maximum);
+    printf("Minimum = %d", minimum);
+    
+    return 0;
+}
+
+6
+
+#include <stdio.h>
+
+int isPrime(int num);
+void printPrimes(int lowerLimit, int upperLimit);
+
+int main()
+{
+    int lowerLimit, upperLimit;
+    
+    printf("Enter the lower and upper limit to list primes: ");
+    scanf("%d%d", &lowerLimit, &upperLimit);
+
+    printPrimes(lowerLimit, upperLimit);
+    
+    return 0;
+}
+
+void printPrimes(int lowerLimit, int upperLimit)
+{
+    printf("All prime number between %d to %d are: ", lowerLimit, upperLimit);
+    
+    while(lowerLimit <= upperLimit)
+    {
+        
+        if(isPrime(lowerLimit))
+        {
+            printf("%d, ", lowerLimit);
+        }
+        
+        lowerLimit++;
+    }
+}
+
+int isPrime(int num)   
+{  
+    int i;  
+      
+    for(i=2; i<=num/2; i++)    
+    {    
+    
+        if(num % i == 0)    
+        {  
+            return 0;  
+        }    
+    }   
+      
+    return 1;   
+}
