@@ -1,0 +1,230 @@
+2
+
+#include <stdio.h>
+int cube(int num)
+{
+    return (num * num * num);
+}
+int main()
+{
+    int num;
+   int  c;
+    
+    printf("Enter number: ");
+    scanf("%d", &num);
+    
+    c = cube(num);
+
+    printf("Cube = %d", c); 
+    
+    return 0;
+}
+
+3
+
+#include <stdio.h>
+#include <math.h> 
+
+double diameter(double radius){
+    return 2*radius;
+
+}
+double area (double radius){
+    return M_PI*radius*radius;
+   
+}
+double circleference(double radius){
+    return 2*M_PI*radius;
+}
+int main(){
+    float dia;
+    float ar;
+    float circlef;
+    float radius;
+ printf("enter radius");
+ scanf("%f" , &radius);
+
+dia =diameter(radius);
+ar= area(radius);
+circlef=circleference(radius);
+
+ printf("diameter=%f\n area=%f\n circleference=%f\n",dia,area,circlef);
+ return 0;
+ 
+}
+
+6
+
+#include <stdio.h>
+
+
+int max(int num1, int num2)
+{
+    return (num1 > num2 ) ? num1 : num2;
+}
+
+int min(int num1, int num2) 
+{
+    return (num1 > num2 ) ? num2 : num1;
+}
+
+
+int main() 
+{
+    int num1, num2, maximum, minimum;
+    
+   
+    printf("Enter two numbers: ");
+    scanf("%d%d", &num1, &num2);
+    
+    maximum = max(num1, num2);  
+    minimum = min(num1, num2);  
+    
+    printf("\nMaximum = %d\n", maximum);
+    printf("Minimum = %d", minimum);
+    
+    return 0;
+}
+8
+not yet 
+
+12
+
+#include <stdio.h>
+
+void printevennumbers (int num,int lim ){
+  if(num%2!=0){
+      num++;
+  }
+    if(num > lim){
+        return;
+    }
+ printf ("%d",num);
+ printevennumbers(num + 2,lim);
+}
+int main() {
+    int lowerlim; int overlim;
+    printf("enter lower limit");
+    scanf("%d",&lowerlim);
+    printf("enter over limit");
+    scanf("%d",&overlim);
+    printf("even numbers from %d to %d",lowerlim,overlim);
+    printevennumbers(lowerlim,overlim);
+
+    return 0;
+}
+
+16
+
+#include <stdio.h>
+#include <math.h>
+int reverse(int num)
+{
+   
+    int digit = (int)log10(num);
+    
+  
+    if(num == 0)
+        return 0;
+
+    return ((num%10 * pow(10, digit)) + reverse(num/10));
+}
+
+int isPalindrome(int num)
+{
+   
+    if(num == reverse(num)){
+    
+        return 1;
+    }
+    
+    return 0;
+}
+int main()
+{
+    int num;
+    
+   
+    printf("Enter any number: ");
+    scanf("%d", &num);
+    
+    if(isPalindrome(num) == 1)
+    {
+        printf("%d is palindrome number.\n", num);
+    }
+    else
+    {
+        printf("%d is NOT palindrome number.\n", num);
+    }
+    
+    return 0;
+}
+
+***17***
+
+#include <stdio.h>
+
+int sumofdigits (int num){
+    if (num ==0 ){
+        return 0;
+    }
+    return (num%10+ sumofdigits(num / 10));
+}
+
+int main()
+{
+    int number;
+  printf("enter any number");
+  scanf("%d",&number);
+    printf("sum of digits=%d",sumofdigits(number));
+    
+    return 0;
+}
+
+***18***
+
+#include <stdio.h>
+
+int factorial (int num){
+    if (num > 1 ){
+       return (num*factorial(num-1));
+    }
+   
+}
+
+int main()
+{
+    int number;
+  printf("enter any number");
+  scanf("%d",&number);
+    printf("factorial of number =%d",factorial(number));
+    
+    return 0;
+}
+
+***HAKERRANK***
+***1***
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+//Complete the following function.
+
+int find_nth_term(int n, int a, int b, int c) {
+  if (n == 1) return a;
+    if (n == 2) return b;
+    if (n == 3) return c;
+    return find_nth_term(n - 1, a, b, c) + find_nth_term(n - 2, a, b, c) + find_nth_term(n - 3, a, b, c);
+}
+
+int main() {
+    int n, a, b, c;
+  
+    scanf("%d %d %d %d", &n, &a, &b, &c);
+    int ans = find_nth_term(n, a, b, c);
+ 
+    printf("%d", ans); 
+    return 0;
+}
+
+***2***
