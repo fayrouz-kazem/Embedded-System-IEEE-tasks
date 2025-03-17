@@ -10,6 +10,7 @@ float shipping[100];
 int overnight_shipping[100];
 
 void get_product_info() {
+//get products info
     printf("Enter product name: ");
     scanf("%49s", product_name[count]);
 
@@ -23,6 +24,7 @@ void get_product_info() {
 }
 
 float calculateShipping(int index) {
+//calculate shipping
     float shipping_cost = (price[index] < 10) ? 2.0 : 3.0;
 
     if (overnight_shipping[index]) {
@@ -33,10 +35,12 @@ float calculateShipping(int index) {
 }
 
 void calculateTotalPrice() {
+//calculate final price
     total_price = 0;
     float total_shipping = 0;
 
     for (int i = 0; i < count; i++) {
+
         shipping[i] = calculateShipping(i);
         total_shipping += shipping[i];
         total_price += price[i];
@@ -63,6 +67,7 @@ int main() {
     }
 
     for (int i = 0; i < num_of_products; i++) {
+// loop for geting informations
         get_product_info();
     }
 
